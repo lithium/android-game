@@ -50,6 +50,7 @@ public class SceneView extends GLSurfaceView
 
     public void setup(GL10 gl)
     {
+        gl.glClearColor(0f,0f,0f, 0.5f);
         mSprites.setup(gl);
     }
     public void reshape(GL10 gl, int w, int h)
@@ -64,6 +65,10 @@ public class SceneView extends GLSurfaceView
         long elapsed = mLastTick == 0 ? 0 : now - mLastTick;
         tick(elapsed);
         mLastTick = now;
+
+
+        gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
+        gl.glLoadIdentity();
 
         mSprites.draw(gl);
     }
