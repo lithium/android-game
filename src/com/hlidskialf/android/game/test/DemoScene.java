@@ -12,6 +12,8 @@ import java.nio.FloatBuffer;
 
 import android.util.Log;
 
+import com.hlidskialf.android.game.scene.Emitter;
+
 public class DemoScene extends SceneView
 {
 
@@ -19,8 +21,9 @@ public class DemoScene extends SceneView
     {
         super(context,attrs);
 
-        mSprite = new DemoSprite();
-        addSprite(mSprite);
+        //mSprite = new DemoSprite();
+        //addSprite(mSprite);
+        addSprite(new Emitter(50));
     }
 
     public void setup(GL10 gl)
@@ -52,7 +55,7 @@ public class DemoScene extends SceneView
             0f,0f,0f, 
             0f,1f,0f);
 
-        mSprite.origin.set(0f, 0f, 0f);
+        //mSprite.origin.set(0f, 0f, 0f);
 
 
     }
